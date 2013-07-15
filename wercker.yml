@@ -7,6 +7,9 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) runnin:g"
     - script:
+        name: ls -la usr/bin
+        code: ls -la /usr/bin
+    - script:
         name: apt-get mongo
         code: |
            sudo apt-get update
