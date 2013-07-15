@@ -13,6 +13,9 @@ build:
         name: cat mongo conf
         code: cat /etc/mongodb.conf
     - script:
+        name: ls etc
+        code: ls -la /etc/init.d/
+    - script:
         name: ps aux
         code: ps aux
     - script:
