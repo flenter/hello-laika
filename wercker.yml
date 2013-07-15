@@ -10,6 +10,9 @@ build:
         name: install laika
         code: sudo npm install -g laika
     - script:
+        name: ls etc
+        code: ls -la /etc/init.d/
+    - script:
         name: cat mongo conf
         code: cat /etc/mongodb.conf
     - script:
