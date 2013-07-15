@@ -7,6 +7,9 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) runnin:g"
     - script:
+        name: apt-get mongo
+        code: sudo apt-get install mongodb-10gen
+    - script:
         name: install laika
         code: sudo npm install -g laika
     - script:
