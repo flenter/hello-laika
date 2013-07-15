@@ -8,7 +8,12 @@ build:
           echo "npm version $(npm -v) runnin:g"
     - script:
         name: apt-get mongo
-        code: sudo apt-get install mongodb-10gen
+        code: |
+           sudo apt-get update
+           sudo apt-get upgrade
+           sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+           echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/10gen.list
+           sudo apt-get install mongodb-10gen
     - script:
         name: install laika
         code: sudo npm install -g laika
