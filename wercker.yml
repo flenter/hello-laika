@@ -10,8 +10,12 @@ build:
         name: ls -la usr/bin
         code: ls -la /usr/bin
     - script:
+        name: ls -la etc/init.d
+        code: ls -la /etc/init.d
+    - script:
         name: restart mongo
         code: |
+        ls -la
           sudo stop mongod
           sudo start mongod
           ps aux |grep mongod
