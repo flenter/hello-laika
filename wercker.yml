@@ -15,8 +15,8 @@ build:
     - script:
         name: restart mongo
         code: |
-          sudo stop mongod
-          sudo start mongod
+          sudo stop mongodb
+          sudo start mongodb
           ps aux |grep mongod
     - script:
         name: install laika
