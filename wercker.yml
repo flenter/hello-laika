@@ -8,7 +8,11 @@ build:
           echo "npm version $(npm -v) running"
     - script:
         name: log before kicking
-        code: cat /var/log/mongodb/mongodb.log
+        code: |
+          cat /var/log/mongodb/mongodb.log
+          echo 'verbose = true' | sudo tee /etc/mongodb.conf
+          echo 'noprealloc = true' | sudo tee /etc/mongodb.conf
+          echo 'smallfiles = true' | sudo tee /etc/mongodb.conf
     - script:
         name: kick mongo
         code: |
