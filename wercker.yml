@@ -13,10 +13,8 @@ build:
         name: ls -la etc/init.d
         code: ls -la /etc/init.d
     - script:
-        name: restart mongo
-        code: |
-          sudo /etc/init.d/mongodb restart
-          ps aux |grep mongod
+        name: mongo log
+        code: cat /data/mongodb/log/mongodb.log
     - script:
         name: install laika
         code: sudo npm install -g laika
