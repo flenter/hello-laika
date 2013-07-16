@@ -15,7 +15,6 @@ build:
     - script:
         name: restart mongo
         code: |
-        ls -la
           sudo stop mongod
           sudo start mongod
           ps aux |grep mongod
