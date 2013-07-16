@@ -14,7 +14,11 @@ build:
         code: ls -la /etc/init.d
     - script:
         name: mongo log
-        code: cat /data/mongodb/log/mongodb.log
+        code: |
+          ls -la /data/
+          ls -la /data/mongodb/
+          ls -la /data/mongodb/log/
+          cat /data/mongodb/log/mongodb.log
     - script:
         name: install laika
         code: sudo npm install -g laika
