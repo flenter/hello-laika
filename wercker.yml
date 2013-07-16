@@ -5,7 +5,10 @@ build:
         name: echo nodejs information
         code: |
           echo "node version $(node -v) running"
-          echo "npm version $(npm -v) runnin:g"
+          echo "npm version $(npm -v) running"
+    - script:
+        name: logy mongoy
+        code: cat /var/log/mongodb/mongodb.log
     - script:
         name: ls -la usr/bin
         code: ls -la /usr/bin
