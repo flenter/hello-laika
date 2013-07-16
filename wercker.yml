@@ -45,4 +45,4 @@ build:
         code: cat /etc/mongodb.conf
     - script:
         name: run laika
-        code: laika -D
+        code: sudo laika -D
