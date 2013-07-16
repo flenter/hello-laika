@@ -7,9 +7,12 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
     - script:
+        name: log before kicking
+        code: cat /var/log/mongodb/mongodb.log
+    - script:
         name: kick mongo
         code: |
-          sudo service mongodb start
+          sudo service mongodb restart
     - script:
         name: sleep well
         code: sleep 15
