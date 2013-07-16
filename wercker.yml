@@ -10,9 +10,6 @@ build:
         name: log before kicking
         code: |
           cat /var/log/mongodb/mongodb.log
-          echo 'verbose = true' | sudo tee /etc/mongodb.conf
-          echo 'noprealloc = true' | sudo tee /etc/mongodb.conf
-          echo 'smallfiles = true' | sudo tee /etc/mongodb.conf
     - script:
         name: kick mongo
         code: |
@@ -40,6 +37,9 @@ build:
     - script:
         name: install laika
         code: sudo npm install -g laika
+    - script:
+        name: listeners...
+        code: sudo lsof -Pnl +M -i4
     - script:
         name: cat mongo conf
         code: cat /etc/mongodb.conf
