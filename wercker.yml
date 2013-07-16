@@ -8,10 +8,16 @@ build:
           echo "npm version $(npm -v) running"
     - script:
         name: kick mongo
-        code: sudo service mongodb start
+        code: |
+          sudo service mongodb start
     - script:
         name: sleep well
         code: sleep 15
+    - script:
+        name: is running?
+        code: |
+          sudo service mongodb status
+          cat /etc/init/mongodb.conf
     - script:
         name: logy mongoy
         code: cat /var/log/mongodb/mongodb.log
