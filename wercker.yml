@@ -13,6 +13,9 @@ build:
         name: ls -la etc/init.d
         code: ls -la /etc/init.d
     - script:
+        name: ps aux
+        code: ps aux
+    - script:
         name: mongo log
         code: |
           ls -la /data/
@@ -28,9 +31,6 @@ build:
     - script:
         name: ls etc
         code: ls -la /etc/init.d/
-    - script:
-        name: ps aux
-        code: ps aux
     - script:
         name: run laika
         code: laika -D
