@@ -7,6 +7,9 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
     - script:
+        name: kick mongo
+        code: sudo service mongodb start
+    - script:
         name: sleep well
         code: sleep 15
     - script:
